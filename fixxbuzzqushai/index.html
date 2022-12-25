@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Project FIZZBUZZ</h1>
+    <div>
+      <p>Type a number :</p>
+      <input type="text" id="masuk" value="" />
+      <button onclick="seleksi()">Click Here!</button>
+      <p id="hasil"></p>
+    </div>
+    <script>
+      const seleksi = () => {
+        var masuk = document.getElementById("masuk").value;
+        var hasilnya = document.getElementById("hasil");
+
+        if (masuk == 0) {
+          hasilnya.innerHTML = `INVALID INPUT`;
+          hasilnya.style.color = "red";
+        }
+        // else if(typeof masuk === 'string' || masuk instanceof String){
+        //   hasilnya.innerHTML = `${masuk} Tolong input angka`;
+        // }
+        else {
+          hasilnya.style.color = "none";
+          if (masuk % 15 === 0) {
+            hasilnya.innerHTML = `Nomor ${masuk} termasuk dalam FIZZBUZZ`;
+          } else if (masuk % 3 === 0) {
+            hasilnya.innerHTML = `Nomor ${masuk} termasuk dalam FIZZ`;
+          } else if (masuk % 5 === 0) {
+            hasilnya.innerHTML = `Nomor ${masuk} termasuk dalam BUZZ`;
+          } else {
+            hasilnya.innerHTML = `Nomor ${masuk} adalah normal`;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
